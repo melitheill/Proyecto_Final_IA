@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5dade2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #003366;
+}
+
+/* Custom components */
+.btn-primary {
+  @apply bg-unicen-dark hover:bg-unicen-light text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply border-2 border-unicen-dark text-unicen-dark hover:bg-unicen-dark hover:text-white font-medium py-3 px-6 rounded-lg transition-all duration-300;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-lg border border-gray-100 p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #003366 0%, #5dade2 100%);
+}
+
+.section-padding {
+  @apply py-16 px-4 sm:px-6 lg:px-8;
+}
+
+.container-max {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Footer enhancements */
+.container-max {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Smooth transitions for interactive elements */
+footer a {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+footer a:focus {
+  @apply outline-none ring-2 ring-unicen-light ring-offset-2 ring-offset-unicen-dark rounded;
+}
+
+/* Hover effects for social icons */
+footer .social-icon:hover {
+  transform: translateY(-2px);
+}
+
+/* Map container responsive behavior */
+@media (max-width: 1024px) {
+  .map-container {
+    @apply col-span-full mt-8;
+  }
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+  footer .grid {
+    @apply gap-8;
+  }
+
+  footer h4 {
+    @apply text-base;
+  }
+}
